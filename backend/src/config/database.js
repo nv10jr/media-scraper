@@ -1,20 +1,21 @@
 const { Sequelize } = require('sequelize')
+const config = require('./config')
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || 'media_scraper',
-  process.env.DB_USER || 'root',
-  process.env.DB_PASSWORD || 'password',
+  config.database.name,
+  config.database.user,
+  config.database.password,
   {
-    host: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 5432,
-    dialect: 'postgres',
+    host: config.database.host,
+    port: config.database.port,
+    dialect: config.database.dialect,
     logging: false,
     pool: {
       max: 5,
       min: 0,
       acquire: 30000,
-      idle: 10000,
-    },
+      idle: 10000
+    }
   }
 )
 

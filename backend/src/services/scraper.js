@@ -75,10 +75,6 @@ class ScraperService {
         }
       })
 
-      // Remove duplicates
-      media.images = [...new Map(media.images.map((item) => [item.url, item])).values()]
-      media.videos = [...new Map(media.videos.map((item) => [item.url, item])).values()]
-
       return media
     } catch (error) {
       console.error(`Error scraping ${url}:`, error)

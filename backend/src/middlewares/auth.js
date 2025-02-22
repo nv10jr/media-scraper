@@ -1,18 +1,19 @@
 const basicAuth = require('basic-auth')
+const { AuthenticationError } = require('../utils/errors')
+const config = require('../config/config')
 
 const auth = (req, res, next) => {
   const user = basicAuth(req)
 
   if (!user || !user.name || !user.pass) {
-    res.set('WWW-Authenticate', 'Basic realm=Authorization Required')
-    return res.status(401).send('Authentication required')
+    throw new AuthenticationError('Authentication required')
   }
 
-  if (user.name === process.env.AUTH_USERNAME && user.pass === process.env.AUTH_PASSWORD) {
+  if (user.name === config.auth.username && user.pass === config.auth.password) {
     return next()
   }
 
-  return res.status(401).send('Invalid credentials')
+  throw new AuthenticationError('Invalid credentials')
 }
 
 module.exports = auth

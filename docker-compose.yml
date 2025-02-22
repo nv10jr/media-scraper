@@ -23,6 +23,14 @@ services:
         condition: service_healthy
     networks:
       - app-network
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"    # Limit to 1 CPU
+          memory: "1GB"  # Limit to 1GB RAM
+        reservations:
+          cpus: "0.5"    # Reserve at least 0.5 CPU
+          memory: "512MB" # Reserve at least 512MB
 
   frontend:
     build: ./frontend

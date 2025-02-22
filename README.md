@@ -74,6 +74,8 @@ All endpoints require Basic Authentication.
 
 ## Architecture
 
+<img width="946" alt="image" src="https://github.com/user-attachments/assets/b26dbeeb-ac86-473b-9e9c-d68aea9822f6" />
+
 ### Database Schema
 
 The Media table includes:

@@ -2,6 +2,8 @@
 
 A full-stack web application that scrapes media (images and videos) from provided URLs. Built with Node.js, React, PostgreSQL, and Redis.
 
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/079f4822-af53-483a-8030-d3aa275423d1" />
+
 ## Features
 
 - 🔒 Basic authentication protection

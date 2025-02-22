@@ -111,12 +111,3 @@ The application uses Bull queue with Redis for:
 
 <img width="904" alt="image" src="https://github.com/user-attachments/assets/1f21cd46-eed1-48ce-ba8c-ec3a84cd63e4" />
 <img width="1181" alt="image" src="https://github.com/user-attachments/assets/6d360bbd-8c6f-44f4-8fd4-2eef6968b20f" />
-
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request

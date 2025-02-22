@@ -26,10 +26,16 @@ class ScraperService {
       // Scrape images
       $('img').each((i, element) => {
         let src = $(element).attr('src')
+
+        if (!src || src.startsWith('data:')) {
+          src = null
+        }
+
         // Also check data-src for lazy loaded images
         if (!src) {
           src = $(element).attr('data-src')
         }
+
         // Handle relative URLs
         if (src && !src.match(/^(http|https):\/\//)) {
           try {
@@ -52,10 +58,16 @@ class ScraperService {
       // Scrape videos
       $('video, video source, iframe[src*="youtube"], iframe[src*="vimeo"]').each((i, element) => {
         let src = $(element).attr('src')
+
+        if (!src || src.startsWith('data:')) {
+          src = null
+        }
+
         // Check for data-src
         if (!src) {
           src = $(element).attr('data-src')
         }
+ 
         // Handle relative URLs
         if (src && !src.match(/^(http|https):\/\//)) {
           try {
